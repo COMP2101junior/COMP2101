@@ -11,15 +11,17 @@
 # Modify the script to retrive and install the files that located in https://zonzorp.net/pics.tgz tarfile
 test -d ~/Pictures || mkdir ~/Pictures
 
-# zip file of the picture is downloaded to the Pictures directory
-test -f ~/Pictures/pics.zip || wget -q -O ~/Pictures/pics.zip http://zonzorp.net/pics.zip
+# tarfile file of the picture is downloaded to the Pictures directory
 test -f ~/Pictures/pics.tgz || wget -q -0 ~/Pictures/pics.tgz http://zonzorp.net/pics.tgz
 
-# Downloaded files are unpacked(zip)
-test -f ~/Pictures/pics.zip && unzip -d ~/Pictures -o -q ~/Pictures/pics.zip && rm ~/Pictures/pics.zip
-#tarfile
+#tarfile is unpacked
 test -f ~/Pictures/pics.tgz && tar -xvf  ~/Pictures/pics.tgz -C ~/Pictures  && rm ~/Pictures/pics.tgz
+
 # Make a report on what we have in the Pictures directory
+
+echo "Report"
+echo "In home directory there is directory called Pictures"
+
 test -d ~/Pictures && cat <<EOF
 Found $(find ~/Pictures -type f|wc -l) files in the Pictures directory.
 The Pictures directory uses $(du -sh ~/Pictures|awk '{print $1}') space on the disk.
