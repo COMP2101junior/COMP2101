@@ -13,9 +13,9 @@ referenceString="password"
 #         The if command should tell them they got it wrong
 if [ $myString == $referenceString ]
 then
-  echo "password is correct"
+  echo "password matching"
 else
-  echo " password is wrong"
+  echo " password not matching"
 fi
 
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
