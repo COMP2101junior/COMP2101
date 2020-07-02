@@ -12,42 +12,51 @@ referenceString="password"
 #         The if command should test if they got it right, in which case it should tell them they got it right
 #         The if command should tell them they got it wrong
 if [ $myString == $referenceString ]
+
 then
-  echo "password matching"
+    echo "password matching"
 else
-  echo " password not matching"
-fi
+    echo " password not matching"
+  fi
+
 
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
+###################################
+echo "enter the password second attempt"
+read myString
 
-if [ $myString != $referenceString ]
+if [ $myString == $referenceString ]
+
 then
-  echo "Password matching"
+    echo "Password matching on second attempt"
 else
-  echo  "password not  matching,1st attempt failed"
+    echo  "password not  matching on second attempt"
+#############################
+echo "enter the password third attempt"
+read myString
 if [ $myString == $referenceString ]
 then
-  echo "Password matching"
+  echo "Password matching on third attempt"
 else
-  echo "password not matching,2nd attempt failed"
+  echo "password not matching, on third attempt"
+####################################
+echo "enter the password fourth attempt"
+read myString
 if [ $myString == $referenceString ]
 then
-  echo "Password matching"
+  echo "Password matching on fourth attempt"
 else
-  echo "password not  matching,3rd attempt failed"
+  echo "password not  matching on fourth attempt"
+  ##################################
+  echo "enter the password fifth attempt"
+  read myString
 if [ $myString == $referenceString ]
   then
-    echo "Password matching,"
-else
-  echo "password not  matching,4th attempt failed"
-  if [ $myString == $referenceString ]
-  then
-    echo "Password matching"
+    echo "Password matching on fifth attempt"
   else
-    echo "password  matching,5th attempt failed"
+    echo "password not  matching on fifth attempt "
     echo "try after some time"
-  fi
 fi
 fi
 fi
