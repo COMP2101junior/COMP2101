@@ -46,14 +46,14 @@ function Interrupt {
 }
   #when Script receives Quit signals
   function Quit {
-    echo "You found a secret way to exit script"
+    echo "You found a secret way to exit script and exit immediately"
     exit 0
   }
 
 # Normally traps catch signals and do something useful or necessary with them
 #trapping Quit and Interrupt signals
-trap interrupt INT
-trap quit QUIT
+trap Interrupt INT
+trap Quit QUIT
 
 
 # Produce the numbers for the countdown
