@@ -18,16 +18,14 @@
 # Variables   #
 ###############
 title="Overlord"
-USER="Junior"
-hostname="myhostname"
+hostname=$(hostname)
 
 ###############
-Date and time commands
+#Date and time commands
 day=$(date +%A)
 hour=$(date +%I)
 minute=$(date +%M)
 meridian=$(date +%p)
-echo "It is a $day at $hour:$minute $meridian"
 ###############
 #each title is displayed with titles
 if [ $day == "Monday" ]
@@ -56,6 +54,6 @@ fi
 #A new variable called output is created
 #In this variable the output is stored
 
-output="Welcome to planet $hostname, $title, $USER"
+output="Welcome to planet $hostname, $title, $USER,$day,$hour,:$minute,$meridian"
 #image of cow pointing the output is displayed
 cowsay  $output
